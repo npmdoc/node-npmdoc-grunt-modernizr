@@ -1,0 +1,154 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/Modernizr/grunt-modernizr"
+
+    >grunt-modernizr (v1.0.2)</a>
+</h1>
+<h4>Build out a lean, mean Modernizr machine.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-modernizr">module grunt-modernizr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-modernizr.grunt-modernizr">
+            function <span class="apidocSignatureSpan"></span>grunt-modernizr
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-modernizr" id="apidoc.module.grunt-modernizr">module grunt-modernizr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-modernizr.grunt-modernizr" id="apidoc.element.grunt-modernizr.grunt-modernizr">
+        function <span class="apidocSignatureSpan"></span>grunt-modernizr
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-modernizr = function (grunt) {
+
+  grunt.loadNpmTasks(&#x27;grunt-contrib-clean&#x27;);
+  grunt.loadNpmTasks(&#x27;grunt-contrib-jshint&#x27;);
+  grunt.loadNpmTasks(&#x27;grunt-contrib-nodeunit&#x27;);
+  grunt.loadNpmTasks(&#x27;grunt-contrib-watch&#x27;);
+
+  // Project configuration.
+  grunt.initConfig({
+    clean: [&#x22;build&#x22;],
+    nodeunit: {
+      files: [&#x27;test/**/*.js&#x27;]
+    },
+    watch: {
+      files: &#x27;&#x3c;%= jshint.files %&#x3e;&#x27;,
+      tasks: &#x27;default&#x27;
+    },
+    jshint: {
+      options: {
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        sub: true,
+        undef: true,
+        boss: true,
+        eqnull: true,
+        node: true,
+        globals: {}
+      },
+      files: [
+        &#x27;Gruntfile.js&#x27;,
+        &#x27;tasks/**/*.js&#x27;,
+        &#x27;test/**/*.js&#x27;
+      ]
+    },
+    modernizr: {
+      dist: {
+        dest: &#x22;build/modernizr-custom.js&#x22;
+      }
+    }
+  });
+
+  // Load local tasks.
+  grunt.loadTasks(&#x27;tasks&#x27;);
+
+  // Default task.
+  grunt.registerTask(&#x27;default&#x27;, [
+    &#x27;jshint&#x27;//,
+    //&#x27;nodeunit&#x27; // there is no test for now, nodeunit task break if there isn&#x27;t
+  ]);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
